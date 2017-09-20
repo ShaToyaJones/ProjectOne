@@ -1,7 +1,7 @@
 #Team Name: AJAX Bettys
 #ProjectOne
 
-#Short One Page Proposal
+#Short 1 Page Proposal
 *Project title:
 *Music & Food Pairing 
 *App Name:
