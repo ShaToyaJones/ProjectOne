@@ -1,6 +1,8 @@
-// Will need this script tag in HTML******
+// JavaScript for MealGrooves Application
+// Steps to complete:
+// [] Will need this script tag in HTML******
 // <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-// <script>
+// [] Link in project HTML
 
 // Initialize Firebase
 var config = {
@@ -12,3 +14,21 @@ var config = {
   messagingSenderId: "948740357477"
 };
 firebase.initializeApp(config);
+
+
+
+
+// VARIABLES ====================
+// 
+
+
+
+
+// FUNCTIONS ====================
+//
+
+
+
+
+// MAIN PROCESS ====================
+// 
