@@ -2,22 +2,6 @@
 
 // [] Link in project HTML
 
-// First Spotify API call to get list of featured playlists
-var featPlaylists = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://api.spotify.com/v1/browse/featured-playlists?limit=5",
-  "method": "GET",
-  "headers": {
-    "authorization": "Bearer BQA7pBK68ohtIbEtuD0JMHHG7Q_tL3kRrUoo4jfSu1lBFl0HInqJJUf4tSxx5yXAOCYLX3NeLYFgW7Mrr-Dx2X2tSLdYEsoqPD82aNBgmxkJGzlOrblcDS75_FzHWtm425Nst_QSsw",
-    // "cache-control": "no-cache",
-    // "postman-token": "64edfafe-4f2d-1f40-fb53-d9c8c6408139"
-  }
-}
-
-// $.ajax(featPlaylists).done(function (response) {
-//   console.log(response);
-// });
 
 // ISSUE - Tokens expire
 // New ISSUE - "Request header not allowed by Access-Control-Allow-Headers in preflight response" ~FIXED if comment-out cache-control & postman-token
@@ -26,7 +10,6 @@ var featPlaylists = {
 // VARIABLES ====================
 // 
 
-// var results = "";
 
 
 
@@ -44,30 +27,42 @@ var featPlaylists = {
 
 $(document).ready(function() {
 
-
+  // First Spotify API call to get list of featured playlists
+  var featPlaylists = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.spotify.com/v1/browse/featured-playlists?limit=5",
+    "method": "GET",
+    "headers": {
+      "authorization": "Bearer BQA7pBK68ohtIbEtuD0JMHHG7Q_tL3kRrUoo4jfSu1lBFl0HInqJJUf4tSxx5yXAOCYLX3NeLYFgW7Mrr-Dx2X2tSLdYEsoqPD82aNBgmxkJGzlOrblcDS75_FzHWtm425Nst_QSsw",
+      // "cache-control": "no-cache",
+      // "postman-token": "64edfafe-4f2d-1f40-fb53-d9c8c6408139"
+    }
+  } 
   $.ajax(featPlaylists).done(function (response) {
     
-    console.log("ajax response object = ");
+    // Log results of the featured playlists ajax call
     console.log(response);
+    // console.log(response.message);
+    // console.log(response.playlists);
 
-    var results = response.data;
+    // Save call results to new variable
+    var results = response.playlists.items;
 
-      console.log("var results = " + results);
+      console.log(results);
+      // console.log(results.items);
 
-      // RESULTS COMING UP UNDEFINED*****************
+      for (var k = 0; k < results.length; k++) {
 
-    for (var featPlaylistsIndex = 0; featPlaylistsIndex < results.length; featPlaylistsIndex++) {
+        var listDiv = $("<div>");
+        var listId = $("<p>").text("Playlist ID: " + results[k].id);
 
-    // var listDiv = $("<div>");
-    var listImg = $("<img>");
+        listDiv.append(listId);
 
-    listImg.attr({
-      "src": results[featPlaylistsIndex].playlists.items.images.url,
-    });
-
-    $("#api-tester").append(listImg);
-
-    }
+        $("#api-tester").append(listDiv);
+        
+      };
+    
 
   });
 
