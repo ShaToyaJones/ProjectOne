@@ -36,10 +36,11 @@ $(document).ready(function() {
     "url": "https://api.spotify.com/v1/browse/featured-playlists?limit=5",
     "method": "GET",
     "headers": {
-      "authorization": "Bearer BQABgiEpN2Yf_bU7d2uiRvhR1lyscGafzZhi9j0Ni1P_H5gFzbHr6igW4QUwokTWuyluKWJ8qnz13yRgJRBXSlQm92GVSfd_xQuUL7QrbpXt2AO8e34s9x4tkEjZQbwXRcO11Hzkjw",
+      "authorization": "Bearer BQA0Rd-szv_8tixO7oYaR2YrTLy-ihbL_z6-7fQQUe7JVHL2lLyjn43n79f2LiGW_ALiWuG6PEfqulOso_N4lg",
       // "cache-control": "no-cache",
       // "postman-token": "64edfafe-4f2d-1f40-fb53-d9c8c6408139"
     }
+    // "data": "\"grant_type\": \"client_credentials\"\n\"token_type\": \"Bearer\",\n\"expires_in\": 86400,"
   } 
   $.ajax(featPlaylists).done(function (response) {
     
