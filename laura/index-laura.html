@@ -21,6 +21,10 @@
 		display: inline-flex;
 		flex-wrap: wrap;
 	}
+
+	.listGif {
+		margin-left: 5px;
+	}
 	</style>
 </head>
 <body>
@@ -31,19 +35,28 @@
 			<h1>Playlist party!</h1>
 		</div>
 	</div>
-	
+
+
+	<!-- Layout option 1: covers & player side-by-side -->
 	<div class="row">
-		<div class="col s6 center-align" id="playlist-covers">
+		<div class="col s12 m6 center-align" id="playlist-covers">
 			<!-- Playlist covers generate here -->
 		</div>
 
-		<div class="col s6 center-align" id="player">
+		<div class="col s12 m6 center-align" id="player">
 			<!-- Music player generates here -->
 		</div>
 	</div>
 
-	<!-- Player in it's own row -->
+	<!-- Layout option 2: cover carousel above player -->
 	<!-- <div class="row">
+		<div class="col s12 center-align">
+			<div class="carousel" id="playlist-covers">
+				
+			</div>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col s12 center-align" id="player">
 		</div>
 	</div> -->
