@@ -34,8 +34,8 @@ function renderPlayer() {
 
     player.attr( { 
       "src": playerSrc,
-      "width": 300,
       "height": 300,
+      "width": 300,
       "frameborder": 0,
       "allowtransparancy": true
     });
@@ -87,20 +87,25 @@ $(document).ready(function() {
         var listDiv = $("<div>");
 
         // This for now is adding the ID text to the page. Needed to test if I was drilling into the object or not  ~WORKS
-        var listId = $("<p>").text("Playlist ID: " + results[k].id);
+        // var listId = $("<p>").text("Playlist ID: " + results[k].id);
           
         // Grabs image from ajax object and renders on page  ~WORKS
         var listImg = $("<img>");
-        listImg.attr("src", results[k].images[0].url);
-        listImg.attr("data-uri", results[k].uri);
-        // ^^^COMBINE THESE ATTRS *********************
+        listImg.attr( {
+          "src": results[k].images[0].url,
+          "data-uri": results[k].uri,
+          "height": 200,
+          "width": 200
+        });
+        // listImg.attr("src", results[k].images[0].url);
+        // listImg.attr("data-uri", results[k].uri);
 
         listImg.addClass("listGif");
 
-        listDiv.append(listId);
+        // listDiv.append(listId);
         listDiv.append(listImg);
 
-        $("#api-tester").append(listDiv);
+        $("#playlist-covers").append(listDiv);
       };
     
   });
