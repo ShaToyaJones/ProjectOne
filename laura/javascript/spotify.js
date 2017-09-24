@@ -149,6 +149,8 @@ $(document).ready(function() {
   });
 
 
+  // TESTING : Search input and submit to test Firebase syncing and playlist searching
+  // Will need to work with Toya's inputs for final
   $("#search-submit").on("click", function() {
 
     event.preventDefault();
