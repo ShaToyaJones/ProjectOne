@@ -55,8 +55,19 @@ function renderPlayer() {
 
 $(document).ready(function() {
 
+  // Initializes Materialize carousel viewer
   $(".carousel").carousel();
 
+    // PLAYLIST SEARCH PROCESS ====================
+    //
+
+
+
+
+
+
+    // FEATURED PLAYLISTS PROCESS ====================
+    //
   // First Spotify API call to get list of FEATURED playlists
   // Token comes from Postman code; NEED TO CHANGE THIS*********
   var featPlaylists = {
@@ -65,11 +76,8 @@ $(document).ready(function() {
     "url": "https://api.spotify.com/v1/browse/featured-playlists?limit=6",
     "method": "GET",
     "headers": {
-      "authorization": "Bearer BQDvdaCGFSb3vNelfgFBolmUR4U7CfqXbFG6sKr3cs5vgpINrdkAeM9BwW7q2UK1WVz5WD2FaBVUJnilxXXJTw",
-      // "cache-control": "no-cache",
-      // "postman-token": "64edfafe-4f2d-1f40-fb53-d9c8c6408139"
+      "authorization": "Bearer BQAArnl81wh4F0RQbFy8vN757myObGPOPMX88YLz49oY2uJ7LL-y85MFipEm1JbzQGUaQReiEubwSPOPeO-KNQ",
     }
-    // "data": "\"grant_type\": \"client_credentials\"\n\"token_type\": \"Bearer\",\n\"expires_in\": 86400,"
   } 
   $.ajax(featPlaylists).done(function (response) {
     
@@ -113,13 +121,17 @@ $(document).ready(function() {
 
         // listDiv.append(carouselItem);
 
-
         $("#playlist-covers").append(listDiv);
       };
     
   });
-  // ^^Closes AJAX call
+  // ^^Closes AJAX call for featured playlists
 
+    // END OF PLAYLISTS PROCESSES ====================
+    //
+
+
+  // Applies click functions to rendered playlist covers
   $(this).on("click", ".listGif", function() {
 
     // console.log("Playlist image clicked!");
@@ -134,9 +146,17 @@ $(document).ready(function() {
     // So call function here to run on-click  ~YEP YEP!
 
     renderPlayer();
-    
+  });
+
+
+  $("#search-submit").on("click", function() {
+
+    event.preventDefault();
+
+    console.log("Submit was clicked!");
 
   });
+
 
 });
 // ^^Closes document-ready
