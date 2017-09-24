@@ -1,30 +1,43 @@
 // STEPS TO CONSIDER ====================
 // 
 
+/*
+<!-- Testing web player -->
+			<!-- <iframe src="https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZF1DXdsy92d7BLpC&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe> -->
+*/
 
-// SPOTIFY API ====================
-//
+/*
+SPOTIFY ====================
 
-// Spotify playlist endpoint
-// GET https://api.spotify.com/v1/browse/featured-playlists
-// limit is optional
+*Client ID: 
+e48c998d772a4106a1f14b7540552622
+
+*Client Secret API Key:
+a9338a82078a4669af6c007d4edde014
+
+*Featured playlists
+GET https://api.spotify.com/v1/browse/featured-playlists?limit=6
+
+*Playlists under Spotify user
+GET https://api.spotify.com/v1/users/spotify/playlists?offset=0&limit=6
+
+*Playlists searched by string
+GET https://api.spotify.com/v1/search?q=funk&type=playlist&limit=6
 
 
-// CLIENT CREDENTIALS CALL ====================
+Cool playlists (in case need some titles already known)
+ Global Funk
+ Chilled Jazz
+ Romantic Ballads
+ Love Pop
+*/
 
-// POST -H "Authorization: Basic <base64 encoded e48c998d772a4106a1f14b7540552622:a9338a82078a4669af6c007d4edde014>" -d grant_type=client_credentials https://accounts.spotify.com/api/token
 
 
+/*
+GIT ====================
 
-
-// AUTHORIZATION METHOD CALL -- HOPEFULLY THIS WAY ISN'T THE WAY WE'LL DO IT....
-// 1st Authorization call
-// GET https://accounts.spotify.com/authorize?client_id=e48c998d772a4106a1f14b7540552622&response_type=code&redirect_uri= **********need this
-
-// Client ID e48c998d772a4106a1f14b7540552622
-// Secret Client Key a9338a82078a4669af6c007d4edde014
-
-// 4th Request refresh & access tokens
-// POST https://accounts.spotify.com/api/token?grant_type=authorization_code&code= **********need this &redirect_uri= **********need this
-// Authorization: Basic <base64 encoded client_id:client_secret>  ~like this?
-// Authorization: Basic <base64 encoded e48c998d772a4106a1f14b7540552622:a9338a82078a4669af6c007d4edde014>  ~or this??
+git add index-laura.html
+git add javascript/app.js
+git add javascript/spotify.js
+*/
