@@ -55,6 +55,8 @@ function renderPlayer() {
 
 $(document).ready(function() {
 
+  $(".carousel").carousel();
+
   // First Spotify API call to get list of FEATURED playlists
   // Token comes from Postman code; NEED TO CHANGE THIS*********
   var featPlaylists = {
@@ -63,7 +65,7 @@ $(document).ready(function() {
     "url": "https://api.spotify.com/v1/browse/featured-playlists?limit=6",
     "method": "GET",
     "headers": {
-      "authorization": "Bearer BQCFELl3hcKOcxML6dDvwKVTWhGQ929nNJ9TITKaXoC_TOzBElnGIkoLa6s5w6UIU7TuZpAoESrYjoTRFbwKEQ",
+      "authorization": "Bearer BQDvdaCGFSb3vNelfgFBolmUR4U7CfqXbFG6sKr3cs5vgpINrdkAeM9BwW7q2UK1WVz5WD2FaBVUJnilxXXJTw",
       // "cache-control": "no-cache",
       // "postman-token": "64edfafe-4f2d-1f40-fb53-d9c8c6408139"
     }
@@ -104,6 +106,13 @@ $(document).ready(function() {
 
         // listDiv.append(listId);
         listDiv.append(listImg);
+
+        // Adding Carousel viewer*********************
+        // var carouselItem = $("<a>");
+        // carouselItem.addClass("carousel-item");
+
+        // listDiv.append(carouselItem);
+
 
         $("#playlist-covers").append(listDiv);
       };
