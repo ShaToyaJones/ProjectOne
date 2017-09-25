@@ -21,6 +21,15 @@ firebase.initializeApp(config);
 // VARIABLES ====================
 // 
 
+// Stores Firebase database connection
+var database = firebase.database();
+
+// Will store music search term from form input
+var music = "";
+
+// Will store ingredients search terms from form input
+// var ingredients = "";
+
 
 
 
@@ -32,3 +41,26 @@ firebase.initializeApp(config);
 
 // MAIN PROCESS ====================
 // 
+
+$(document).ready(function() {
+
+	// TESTING : Search input and submit to test Firebase syncing and playlist searching
+  // Will need to work with Toya's inputs for final
+  $("#search-submit").on("click", function() {
+
+    event.preventDefault();
+
+    // console.log("Submit was clicked!");
+
+    // Captures value of input field
+    music = $("#music-search").val().trim();
+    	console.log(music);
+
+    // Clears input fields on submit
+    $("#search-form").trigger("reset");
+
+    // Needs to sync to Firebase next*********
+
+  });
+
+});
