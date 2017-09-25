@@ -7,7 +7,8 @@
 // [] Tokens expire!!!
 // [x] "Request header not allowed by Access-Control-Allow-Headers in preflight response" ~FIXED if comment-out cache-control & postman-token
 // [] Tokens need to be called from this script, not getting token from Postman
-// Q: Will want the ajax call in a function to call in the app.js script?  ~dno't think this matters.... Firebase is more the concern for the app.js
+
+
 
 
 // VARIABLES ====================
@@ -19,14 +20,14 @@ var listUri = "";
 // FUNCTIONS ====================
 //
 
-  // SEARCH PLAYLIST PROCESS ====================
+  // SEARCH PLAYLIST ====================
   //
 
 function searchPlaylists() { 
 
-var searchURL = "https://api.spotify.com/v1/search?q=" + musicSearchTerm + "&type=playlist&limit=6";
+  var searchURL = "https://api.spotify.com/v1/search?q=" + musicSearchTerm + "&type=playlist&limit=6";
 
-  console.log(searchURL);
+  // console.log(searchURL);
 
   var spotSearch = {
   "async": true,
@@ -34,15 +35,104 @@ var searchURL = "https://api.spotify.com/v1/search?q=" + musicSearchTerm + "&typ
   "url": searchURL,
   "method": "GET",
   "headers": {
-    "authorization": "Bearer BQCprfrn2-lphdzVLzvMpvqP0-ZPyNk7lnunTRbFtyTYdLJWIB_nTFPSllRbaSaNkIK1FNESGFt-Kifc57G3eA",
+    "authorization": "Bearer BQDX852F3kXwZnahGyTseaFKgsBeO3uid6LR8JaJpJZ80unUT-2_AslBZreechHUbt8JGbfDZm5DFYum7M_qBw",
     }
   }
   $.ajax(spotSearch).done(function (response) {
   
-  console.log(response);
+    console.log(response);
+
+    var musicSearchResults = response.playlists.items;
+
+    console.log(musicSearchResults);
+
+    console.log("-----^^^SearchedPlaylists-----------------");
+
+    for (var s = 0; s < musicSearchResults.length; s++) {
+
+      var listDiv = $("<div>");
+
+      var listImg = $("<img>");
+        listImg.attr( {
+          "src": musicSearchResults[s].images[0].url,
+          "data-uri": musicSearchResults[s].uri,
+          "height": 200,
+          "width": 200
+        });
+
+      listImg.addClass("listGif");
+
+        listDiv.append(listImg);
+      $("#playlist-covers").append(listDiv);
+    };
+ 
   });
 };
 
+
+    // BROWSE FEATURED PLAYLISTS ====================
+    //
+
+function browseFeatured() {
+  // Spotify API call to get list of FEATURED playlists
+  var featPlaylists = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.spotify.com/v1/browse/featured-playlists?limit=6",
+    "method": "GET",
+    "headers": {
+      "authorization": "Bearer BQDX852F3kXwZnahGyTseaFKgsBeO3uid6LR8JaJpJZ80unUT-2_AslBZreechHUbt8JGbfDZm5DFYum7M_qBw",
+    }
+  } 
+  $.ajax(featPlaylists).done(function (response) {
+    
+    // Log results of the featured playlists ajax call
+    console.log(response);
+    // console.log(response.message);
+    // console.log(response.playlists);
+
+    // MAKE SURE HEATHER'S RESULTS AREN'T CALLED "RESULTS"
+    // Save call results to new variable
+    var results = response.playlists.items;
+
+      console.log(results);
+      // console.log(results.items);
+      console.log("-----^^^Featured Playlists-----------------");
+
+      for (var k = 0; k < results.length; k++) {
+
+        var listDiv = $("<div>");
+
+        // This for now is adding the ID text to the page. Needed to test if I was drilling into the object or not  ~WORKS
+        // var listId = $("<p>").text("Playlist ID: " + results[k].id);
+          
+        // Grabs image from ajax object and renders on page  ~WORKS
+        var listImg = $("<img>");
+        listImg.attr( {
+          "src": results[k].images[0].url,
+          "data-uri": results[k].uri,
+          "height": 200,
+          "width": 200
+        });
+        // listImg.attr("src", results[k].images[0].url);
+        // listImg.attr("data-uri", results[k].uri);
+
+        listImg.addClass("listGif");
+
+        // listDiv.append(listId);
+        listDiv.append(listImg);
+
+        // Adding Carousel viewer*********************
+        // var carouselItem = $("<a>");
+        // carouselItem.addClass("carousel-item");
+
+        // listDiv.append(carouselItem);
+
+        $("#playlist-covers").append(listDiv);
+      };    
+  });
+  // ^^Closes AJAX call for featured playlists
+};
 
 
 
@@ -99,65 +189,7 @@ $(document).ready(function() {
 
     // FEATURED PLAYLISTS PROCESS ====================
     //
-  // First Spotify API call to get list of FEATURED playlists
-  // Token comes from Postman code; NEED TO CHANGE THIS*********
-  var featPlaylists = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://api.spotify.com/v1/browse/featured-playlists?limit=6",
-    "method": "GET",
-    "headers": {
-      "authorization": "Bearer BQCprfrn2-lphdzVLzvMpvqP0-ZPyNk7lnunTRbFtyTYdLJWIB_nTFPSllRbaSaNkIK1FNESGFt-Kifc57G3eA",
-    }
-  } 
-  $.ajax(featPlaylists).done(function (response) {
-    
-    // Log results of the featured playlists ajax call
-    console.log(response);
-    // console.log(response.message);
-    // console.log(response.playlists);
-
-    // Save call results to new variable
-    var results = response.playlists.items;
-
-      console.log(results);
-      // console.log(results.items);
-      console.log("-----^Featured Playlists-----------------")
-
-      for (var k = 0; k < results.length; k++) {
-
-        var listDiv = $("<div>");
-
-        // This for now is adding the ID text to the page. Needed to test if I was drilling into the object or not  ~WORKS
-        // var listId = $("<p>").text("Playlist ID: " + results[k].id);
-          
-        // Grabs image from ajax object and renders on page  ~WORKS
-        var listImg = $("<img>");
-        listImg.attr( {
-          "src": results[k].images[0].url,
-          "data-uri": results[k].uri,
-          "height": 200,
-          "width": 200
-        });
-        // listImg.attr("src", results[k].images[0].url);
-        // listImg.attr("data-uri", results[k].uri);
-
-        listImg.addClass("listGif");
-
-        // listDiv.append(listId);
-        listDiv.append(listImg);
-
-        // Adding Carousel viewer*********************
-        // var carouselItem = $("<a>");
-        // carouselItem.addClass("carousel-item");
-
-        // listDiv.append(carouselItem);
-
-        $("#playlist-covers").append(listDiv);
-      };
-    
-  });
-  // ^^Closes AJAX call for featured playlists
+  
 
     // END OF PLAYLISTS PROCESSES ====================
     //

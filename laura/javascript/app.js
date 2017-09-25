@@ -54,7 +54,7 @@ $(document).ready(function() {
 
     event.preventDefault();
 
-    // console.log("Submit was clicked!");
+    console.log("Submit was clicked!");
 
     // Captures value of input field
     music = $("#music-search").val().trim().toLowerCase();
@@ -63,8 +63,29 @@ $(document).ready(function() {
     // Clears input fields on submit
     $("#search-form").trigger("reset");
 
+    // WANT TO HAVE IF/ELSE TO RUN EITHER MUSIC SEARCH OR FEATURED PLAYLIST BROWSE
+
+    // if #music-search is empty AND featured-playlists is checked
+    // $("#music-search") === null &&
+    // if ( 
+    // $("#featured-search").prop("checked") === true) {
+    // 	console.log("Browse playlists");
+    // };
+    // run browseFeatured();
+    // else
+    // if #music-search isn't empty
+    // run the following
+
+    browseFeatured();
+    // ^^Keep function call outside of Firebase sync
+    // Not syncing Featured Playlist data to Fb
+
+    // $("#playlist-covers").empty();
+    // ^^Need a way to clear out playlist covers on each search submit
+
     // Send values to Firebase 
-    database.ref().push( {
+    // database.ref().push( {
+    database.ref().set( {
     	musicSearch: music,
     	dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
@@ -83,11 +104,8 @@ $(document).ready(function() {
   	musicSearchTerm = snap.musicSearch;
   		// console.log(musicSearchTerm);
 
-  	// Use this var in query URL for playlist search (in spotify.js)
-  	// Doesn't work with multi word inputs*********  ~MAYBE??
-  	// Call a function here with it built on the other sheet??
-  	// renderPlayer();
   	searchPlaylists();
+
   });
 
 });
