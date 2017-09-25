@@ -23,6 +23,7 @@ firebase.initializeApp(config);
 
 // Stores Firebase database connection
 var database = firebase.database();
+var dateAdded = "";
 
 // Will store music search term from form input
 var music = "";
@@ -54,13 +55,28 @@ $(document).ready(function() {
 
     // Captures value of input field
     music = $("#music-search").val().trim();
-    	console.log(music);
+    	// console.log(music);
 
     // Clears input fields on submit
     $("#search-form").trigger("reset");
 
     // Needs to sync to Firebase next*********
+    database.ref().push( {
+    	musicSearch: music,
+    	dateAdded: firebase.database.ServerValue.TIMESTAMP
+    });
 
+  });
+  // ^^Closes submit on-click
+
+  database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
+
+  	var snap = snapshot.val();
+  		console.log("You searched: " + snap.musicSearch);
+  	// So..... how to capture snap.musicSearch so it can be used in the query URL for a playlist search cal....
+  	// Call a function here with it built on the other sheet??
+  	// renderPlayer();
   });
 
 });
+// ^^Closes doc ready
