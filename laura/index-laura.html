@@ -47,15 +47,31 @@
 			<h3>Testing form inputs. Huzzah!</h3>
 			<form class="row" id="search-form">
 				<div class="input-field col s6 right-align">
+
+					<!-- Input field -->
 					<i class="material-icons prefix">music_note</i>
 					<input placeholder="ex. funk, doom metal, whale songs" id="music-search" type="text" class="validate">
 					<label for="music-search">Whaddya wanna hear?</label>
+
+					<!-- Search submit button -->
 					<button class="btn waves-effect waves-light" type="submit" name="action" id="search-submit">Submit
     			<i class="large material-icons right">search</i>
     			</button>
 				</div>
-				
-  </button>
+
+				<!-- Featured playlist switch -->
+				<div>
+					<h5>Rather browse playlists?</h5>
+					<div class="switch col s6 center-align">
+						<label>
+						No
+						<input type="checkbox" id="featured-search">
+						<span class="lever"></span>
+						Yes
+						</label>
+					</div>
+				</div>
+
 			</form>
 		</div>	
 	</div>
