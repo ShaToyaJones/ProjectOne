@@ -62,15 +62,15 @@ $(document).ready(function() {
     music = $("#music-search").val().trim().toLowerCase();
     	// console.log(music);
 
-    // ######NEED TO ADD THIS INPUT TO MY TEST PAGE
     // Captures value of ingredients input field
     food = $("#enterIngredients").val().trim().toLowerCase();
-      console.log(food);
+      // console.log(food);
 
     // Clears input fields on submit
     $("#search-form").trigger("reset");
 
     // WANT TO HAVE IF/ELSE TO RUN EITHER MUSIC SEARCH OR FEATURED PLAYLIST BROWSE
+    // Might need to stick with featured playlists for now until we get all the searching scripts linked..........
 
     // if #music-search is empty AND featured-playlists is checked
     // $("#music-search") === null &&
@@ -88,7 +88,7 @@ $(document).ready(function() {
     // Not syncing Featured Playlist data to Fb
 
     // $("#playlist-covers").empty();
-    // ^^Need a way to clear out playlist covers on each search submit
+    // ^^Need a way to clear out playlist covers on each search submit*************
 
     // Send values to Firebase 
     database.ref().push( {
@@ -111,6 +111,9 @@ $(document).ready(function() {
 
     ingredientSearchTerm = snap.ingredientSearch;
       console.log(ingredientSearchTerm);
+
+    // Need Heather's function to search recipes to call here
+    // RECIPE SEARCH FUNCTION
 
   	musicSearchTerm = snap.musicSearch;
   		console.log(musicSearchTerm);
