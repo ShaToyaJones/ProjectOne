@@ -76,7 +76,7 @@ $(document).ready(function() {
     "url": "https://api.spotify.com/v1/browse/featured-playlists?limit=6",
     "method": "GET",
     "headers": {
-      "authorization": "Bearer BQAArnl81wh4F0RQbFy8vN757myObGPOPMX88YLz49oY2uJ7LL-y85MFipEm1JbzQGUaQReiEubwSPOPeO-KNQ",
+      "authorization": "Bearer BQAq9Oael0kc5vyBZi5CbOHLDNR4ueRLirVyJ8LxY_TR52B0Mn9H4NzBR8h2LN9TWjNDF0C_ts2eXh42lu9Pfg",
     }
   } 
   $.ajax(featPlaylists).done(function (response) {
@@ -145,6 +145,7 @@ $(document).ready(function() {
     // Store this as function similar to renderButtons in giphy HW?
     // So call function here to run on-click  ~YEP YEP!
 
+    // Did a test: Calling renderPlayer() in app.js DID still log the URI....
     renderPlayer();
   });
 
