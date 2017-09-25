@@ -28,6 +28,9 @@ var dateAdded = "";
 // Will store music search term from form input
 var music = "";
 
+// Will store search term from Firebase database
+var musicSearchTerm = "";
+
 // Will store ingredients search terms from form input
 // var ingredients = "";
 
@@ -54,13 +57,13 @@ $(document).ready(function() {
     // console.log("Submit was clicked!");
 
     // Captures value of input field
-    music = $("#music-search").val().trim();
+    music = $("#music-search").val().trim().toLowerCase();
     	// console.log(music);
 
     // Clears input fields on submit
     $("#search-form").trigger("reset");
 
-    // Needs to sync to Firebase next*********
+    // Send values to Firebase 
     database.ref().push( {
     	musicSearch: music,
     	dateAdded: firebase.database.ServerValue.TIMESTAMP
@@ -72,10 +75,19 @@ $(document).ready(function() {
   database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
 
   	var snap = snapshot.val();
-  		console.log("You searched: " + snap.musicSearch);
+  		// console.log("You searched: " + snap.musicSearch);
+
   	// So..... how to capture snap.musicSearch so it can be used in the query URL for a playlist search cal....
+  	// Declare new global var of musicSearchTerm = "";
+
+  	musicSearchTerm = snap.musicSearch;
+  		// console.log(musicSearchTerm);
+
+  	// Use this var in query URL for playlist search (in spotify.js)
+  	// Doesn't work with multi word inputs*********  ~MAYBE??
   	// Call a function here with it built on the other sheet??
   	// renderPlayer();
+  	searchPlaylists();
   });
 
 });

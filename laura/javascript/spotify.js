@@ -19,6 +19,35 @@ var listUri = "";
 // FUNCTIONS ====================
 //
 
+  // SEARCH PLAYLIST PROCESS ====================
+  //
+
+function searchPlaylists() { 
+
+var searchURL = "https://api.spotify.com/v1/search?q=" + musicSearchTerm + "&type=playlist&limit=6";
+
+  console.log(searchURL);
+
+  var spotSearch = {
+  "async": true,
+  "crossDomain": true,
+  "url": searchURL,
+  "method": "GET",
+  "headers": {
+    "authorization": "Bearer BQCprfrn2-lphdzVLzvMpvqP0-ZPyNk7lnunTRbFtyTYdLJWIB_nTFPSllRbaSaNkIK1FNESGFt-Kifc57G3eA",
+    }
+  }
+  $.ajax(spotSearch).done(function (response) {
+  
+  console.log(response);
+  });
+};
+
+
+
+
+// =============================
+
 function renderPlayer() {
 
   // Renders music player with selected playlist based on playlist cover clicked on
@@ -58,10 +87,12 @@ $(document).ready(function() {
   // Initializes Materialize carousel viewer
   $(".carousel").carousel();
 
-    // PLAYLIST SEARCH PROCESS ====================
+
+    // SEARCH PLAYLISTS PROCESS ====================
     //
 
-
+    // Have it built as function further up
+    // Then call function as part of app.js
 
 
 
@@ -76,7 +107,7 @@ $(document).ready(function() {
     "url": "https://api.spotify.com/v1/browse/featured-playlists?limit=6",
     "method": "GET",
     "headers": {
-      "authorization": "Bearer BQAq9Oael0kc5vyBZi5CbOHLDNR4ueRLirVyJ8LxY_TR52B0Mn9H4NzBR8h2LN9TWjNDF0C_ts2eXh42lu9Pfg",
+      "authorization": "Bearer BQCprfrn2-lphdzVLzvMpvqP0-ZPyNk7lnunTRbFtyTYdLJWIB_nTFPSllRbaSaNkIK1FNESGFt-Kifc57G3eA",
     }
   } 
   $.ajax(featPlaylists).done(function (response) {
@@ -91,6 +122,7 @@ $(document).ready(function() {
 
       console.log(results);
       // console.log(results.items);
+      console.log("-----^Featured Playlists-----------------")
 
       for (var k = 0; k < results.length; k++) {
 
