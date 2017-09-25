@@ -28,12 +28,14 @@ var dateAdded = "";
 // Will store music search term from form input
 var music = "";
 
-// Will store search term from Firebase database
+// Will store music search term returned from Firebase database
 var musicSearchTerm = "";
 
 // Will store ingredients search terms from form input
-// var ingredients = "";
+var food = [];
 
+// Will store ingredients search terms returned from Firebase database
+var ingredientSearchTerm = "";
 
 
 
@@ -56,9 +58,14 @@ $(document).ready(function() {
 
     console.log("Submit was clicked!");
 
-    // Captures value of input field
+    // Captures value of music input field
     music = $("#music-search").val().trim().toLowerCase();
     	// console.log(music);
+
+    // ######NEED TO ADD THIS INPUT TO MY TEST PAGE
+    // Captures value of ingredients input field
+    food = $("#enterIngredients").val().trim().toLowerCase();
+      console.log(food);
 
     // Clears input fields on submit
     $("#search-form").trigger("reset");
@@ -84,9 +91,10 @@ $(document).ready(function() {
     // ^^Need a way to clear out playlist covers on each search submit
 
     // Send values to Firebase 
-    // database.ref().push( {
-    database.ref().set( {
+    database.ref().push( {
+    // database.ref().set( {
     	musicSearch: music,
+      ingredientSearch: food,
     	dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 
@@ -96,13 +104,16 @@ $(document).ready(function() {
   database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
 
   	var snap = snapshot.val();
-  		// console.log("You searched: " + snap.musicSearch);
+  		console.log("You searched for: " + snap.musicSearch + " and " + snap.ingredientSearch);
 
   	// So..... how to capture snap.musicSearch so it can be used in the query URL for a playlist search cal....
   	// Declare new global var of musicSearchTerm = "";
 
+    ingredientSearchTerm = snap.ingredientSearch;
+      console.log(ingredientSearchTerm);
+
   	musicSearchTerm = snap.musicSearch;
-  		// console.log(musicSearchTerm);
+  		console.log(musicSearchTerm);
 
   	searchPlaylists();
 
