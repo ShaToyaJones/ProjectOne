@@ -30,6 +30,7 @@ Cool playlists (in case need some titles already known)
  Chilled Jazz
  Romantic Ballads
  Love Pop
+ Late Night Synths & Strings
 */
 
 
