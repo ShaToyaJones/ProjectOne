@@ -106,14 +106,17 @@ $(document).ready(function() {
   	var snap = snapshot.val();
   		console.log("You searched for: " + snap.musicSearch + " and " + snap.ingredientSearch);
 
-  	// So..... how to capture snap.musicSearch so it can be used in the query URL for a playlist search cal....
-  	// Declare new global var of musicSearchTerm = "";
-
     ingredientSearchTerm = snap.ingredientSearch;
       console.log(ingredientSearchTerm);
 
     // Need Heather's function to search recipes to call here
     // RECIPE SEARCH FUNCTION
+    searchRecipeByIngredients();
+
+
+    // So..... how to capture snap.musicSearch so it can be used in the query URL for a playlist search cal....
+    // Declare new global var of musicSearchTerm = "";
+    // ^^Pretty sure this is working now....
 
   	musicSearchTerm = snap.musicSearch;
   		console.log(musicSearchTerm);
