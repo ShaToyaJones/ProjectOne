@@ -10,6 +10,7 @@
 function searchRecipeByIngredients() {
 
   // $("#userDir").text("Click on an image to get the recipe");
+  // Need to turn back on once "merged" with Toya's page
 
   // sets newRecipe to the value of ingredientSearchTerm, which is returned from Firebase in app.js
   var newRecipe = ingredientSearchTerm;
@@ -18,7 +19,7 @@ function searchRecipeByIngredients() {
     console.log("Ingredient search term is: " + ingredientSearchTerm);
 
   // Constructing a queryURL using the user input stored in the newRecipe variable
-  var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + newRecipe + "&limitLicense=false&number=4&ranking=1";
+  var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + newRecipe + "&limitLicense=false&number=1&ranking=1";
 
     console.log(queryURL);
         
