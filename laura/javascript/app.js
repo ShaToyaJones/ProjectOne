@@ -54,6 +54,7 @@ $(document).ready(function() {
 
 	// TESTING : Search input and submit to test Firebase syncing and playlist searching
   // Will need to work with Toya's inputs for final
+  // UNLESS easier to merge my input fields with her html page***
   $("#search-submit").on("click", function() {
 
     event.preventDefault();
@@ -135,43 +136,42 @@ $(document).ready(function() {
       // Fb values ARE being set.....
 
       // So ONLY calls back correctly when "push" enabled.... probably b/c ordering by child.....
-    database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
+      database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
 
-      var snap = snapshot.val();
-        console.log(snap);
-        // console.log("You searched for: " + snap.musicSearch + " and " + snap.ingredientSearch);
+        var snap = snapshot.val();
+          console.log(snap);
+          // console.log("You searched for: " + snap.musicSearch + " and " + snap.ingredientSearch);
 
-      ingredientSearchTerm = snap.ingredientSearch;
+        ingredientSearchTerm = snap.ingredientSearch;
         console.log(ingredientSearchTerm);
 
-      // Need Heather's function to search recipes to call here
-      // RECIPE SEARCH FUNCTION **OFF WHILE TESTING FB
-      // searchRecipeByIngredients();
+        // Need Heather's function to search recipes to call here
+        // RECIPE SEARCH FUNCTION **OFF WHILE TESTING FB
+        // searchRecipeByIngredients();
 
-      // So..... how to capture snap.musicSearch so it can be used in the query URL for a playlist search cal....
-      // Declare new global var of musicSearchTerm = "";
-      // ^^Pretty sure this is working now....
+        // So..... how to capture snap.musicSearch so it can be used in the query URL for a playlist search cal....
+        // Declare new global var of musicSearchTerm = "";
+        // ^^Pretty sure this is working now....
 
-      musicSearchTerm = snap.musicSearch;
-        console.log(musicSearchTerm);
-        // ###### but if musicSearchTerm is empty b/c browsing..... how should this a) know, b) THEN call the browsing function??????************
+        musicSearchTerm = snap.musicSearch;
+          console.log(musicSearchTerm);
+          // ###### but if musicSearchTerm is empty b/c browsing..... how should this a) know, b) THEN call the browsing function??????************
 
-      if (musicSearchTerm === "browse") {
+        if (musicSearchTerm === "browse") {
 
-        browseFeatured();
-          console.log("browseFeatured called");
+          browseFeatured();
+            console.log("browseFeatured called");
 
-      } else {
+        } else {
 
-        searchPlaylists();
-          console.log("searchPlaylists called");
+          searchPlaylists();
+            console.log("searchPlaylists called");
 
-      };
+        };
     });
-  // ^^Closes database.ref function
+    // ^^Closes database.ref function
 
-  // ####TRY PUTTING FIREBASE STUFF IN IT'S OWN FUNCTION, THEN CALL IN EACH PART OF EARLIER IF/ELSE. ***think it was an issue with my order by child in the database reference... (with SET there's no child, only with PUSH)
-
+    // ####TRY PUTTING FIREBASE STUFF IN IT'S OWN FUNCTION, THEN CALL IN EACH PART OF EARLIER IF/ELSE. ***think it was an issue with my order by child in the database reference... (with SET there's no child, only with PUSH)
   });
   // ^^Closes search-submit on-click
 
@@ -188,9 +188,5 @@ $(document).ready(function() {
 
   // });
   // ^^Closes browse-submit function
-
-
-
-
 });
-// ^^Closes doc ready
+  // ^^Closes doc ready
