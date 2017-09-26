@@ -35,7 +35,7 @@ function searchPlaylists() {
   "url": searchURL,
   "method": "GET",
   "headers": {
-    "authorization": "Bearer BQDX852F3kXwZnahGyTseaFKgsBeO3uid6LR8JaJpJZ80unUT-2_AslBZreechHUbt8JGbfDZm5DFYum7M_qBw",
+    "authorization": "Bearer BQAFXrl5l62yxWwPe0UIn0TbIG6ZWnnwMLW_PEcrI9PDxmDAmQ4DDmOLD0lQrThFqoEMpzxqXqQYaoMQ-VIKrg",
     }
   }
   $.ajax(spotSearch).done(function (response) {
@@ -81,7 +81,7 @@ function browseFeatured() {
     "url": "https://api.spotify.com/v1/browse/featured-playlists?limit=6",
     "method": "GET",
     "headers": {
-      "authorization": "Bearer BQDX852F3kXwZnahGyTseaFKgsBeO3uid6LR8JaJpJZ80unUT-2_AslBZreechHUbt8JGbfDZm5DFYum7M_qBw",
+      "authorization": "Bearer BQAFXrl5l62yxWwPe0UIn0TbIG6ZWnnwMLW_PEcrI9PDxmDAmQ4DDmOLD0lQrThFqoEMpzxqXqQYaoMQ-VIKrg",
     }
   } 
   $.ajax(featPlaylists).done(function (response) {
@@ -175,7 +175,7 @@ function renderPlayer() {
 $(document).ready(function() {
 
   // Initializes Materialize carousel viewer
-  $(".carousel").carousel();
+  // $(".carousel").carousel();
 
 
     // SEARCH PLAYLISTS PROCESS ====================
