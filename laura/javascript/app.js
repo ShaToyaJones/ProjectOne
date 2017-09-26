@@ -50,6 +50,8 @@ var ingredientSearchTerm = "";
 
 $(document).ready(function() {
 
+  $("#playlist-covers").empty();
+
 	// TESTING : Search input and submit to test Firebase syncing and playlist searching
   // Will need to work with Toya's inputs for final
   $("#search-submit").on("click", function() {
@@ -69,61 +71,78 @@ $(document).ready(function() {
     // Clears input fields on submit
     $("#search-form").trigger("reset");
 
-    // WANT TO HAVE IF/ELSE TO RUN EITHER MUSIC SEARCH OR FEATURED PLAYLIST BROWSE
-    // Might need to stick with featured playlists for now until we get all the searching scripts linked..........
-
-    // if #music-search is empty AND featured-playlists is checked
-    // $("#music-search") === null &&
-    // if ( 
-    // $("#featured-search").prop("checked") === true) {
-    // 	console.log("Browse playlists");
-    // };
-    // run browseFeatured();
-    // else
-    // if #music-search isn't empty
-    // run the following
-
-    browseFeatured();
-    // ^^Keep function call outside of Firebase sync
-    // Not syncing Featured Playlist data to Fb
-
     // $("#playlist-covers").empty();
     // ^^Need a way to clear out playlist covers on each search submit*************
 
     // Send values to Firebase 
-    database.ref().push( {
-    // database.ref().set( {
+    // database.ref().push( {
+    database.ref().set( {
     	musicSearch: music,
       ingredientSearch: food,
     	dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 
   });
-  // ^^Closes submit on-click
+  // ^^Closes search-submit on-click
+
+
+  // Handles "lucky search" button, which will still send ingredients search to Firebase but will render featured playlists
+  $("#browse-submit").on("click", function() {
+
+    event.preventDefault();
+
+    console.log("Browse submit was clicked!");
+
+    browseFeatured();
+    // ^^Keep function call outside of Firebase sync
+    // Not syncing Featured Playlist data to Fb
+
+    // Captures value of ingredients input field
+    food = $("#enterIngredients").val().trim().toLowerCase();
+      // console.log(food);
+
+    // Clears input fields on submit
+    $("#search-form").trigger("reset");
+
+    // $("#playlist-covers").empty();
+    // ^^Need a way to clear out playlist covers on each search submit*************
+
+    // Send values to Firebase 
+    // database.ref().push( {
+    database.ref().set( {
+      ingredientSearch: food,
+      dateAdded: firebase.database.ServerValue.TIMESTAMP
+    });
+
+  });
+  // ^^Closes browse-submit function
+
 
   database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
 
-  	var snap = snapshot.val();
-  		console.log("You searched for: " + snap.musicSearch + " and " + snap.ingredientSearch);
+      var snap = snapshot.val();
+        console.log("You searched for: " + snap.musicSearch + " and " + snap.ingredientSearch);
 
-    ingredientSearchTerm = snap.ingredientSearch;
-      console.log(ingredientSearchTerm);
+      ingredientSearchTerm = snap.ingredientSearch;
+        console.log(ingredientSearchTerm);
 
-    // Need Heather's function to search recipes to call here
-    // RECIPE SEARCH FUNCTION
-    searchRecipeByIngredients();
+      // Need Heather's function to search recipes to call here
+      // RECIPE SEARCH FUNCTION
+      searchRecipeByIngredients();
 
+      // So..... how to capture snap.musicSearch so it can be used in the query URL for a playlist search cal....
+      // Declare new global var of musicSearchTerm = "";
+      // ^^Pretty sure this is working now....
 
-    // So..... how to capture snap.musicSearch so it can be used in the query URL for a playlist search cal....
-    // Declare new global var of musicSearchTerm = "";
-    // ^^Pretty sure this is working now....
+      musicSearchTerm = snap.musicSearch;
+        console.log(musicSearchTerm);
 
-  	musicSearchTerm = snap.musicSearch;
-  		console.log(musicSearchTerm);
-
-  	searchPlaylists();
+      searchPlaylists();
+      // ####### Functions are in weird places................................
+          // ####DOES NEED FIREBASE REPEATED HERE, SANS MUSIC SYNC
 
   });
+  // ^^Closes database.ref function
 
 });
 // ^^Closes doc ready
