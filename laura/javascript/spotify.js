@@ -16,6 +16,9 @@
 
 var listUri = "";
 
+var authToken = "Bearer BQBqFRHU_v-lZCqi5RleSXCI0noWYHaBDhM-u4EV3hnAfpVvapQWb32Ow9rbuXsfZZvcsCBek12HTcYCbyfC7Q";
+// ^^Update this as needed until working on own
+
 
 // FUNCTIONS ====================
 //
@@ -35,7 +38,7 @@ function searchPlaylists() {
   "url": searchURL,
   "method": "GET",
   "headers": {
-    "authorization": "Bearer BQAFXrl5l62yxWwPe0UIn0TbIG6ZWnnwMLW_PEcrI9PDxmDAmQ4DDmOLD0lQrThFqoEMpzxqXqQYaoMQ-VIKrg",
+    "authorization": authToken,
     }
   }
   $.ajax(spotSearch).done(function (response) {
@@ -81,7 +84,7 @@ function browseFeatured() {
     "url": "https://api.spotify.com/v1/browse/featured-playlists?limit=6",
     "method": "GET",
     "headers": {
-      "authorization": "Bearer BQAFXrl5l62yxWwPe0UIn0TbIG6ZWnnwMLW_PEcrI9PDxmDAmQ4DDmOLD0lQrThFqoEMpzxqXqQYaoMQ-VIKrg",
+      "authorization": authToken,
     }
   } 
   $.ajax(featPlaylists).done(function (response) {
