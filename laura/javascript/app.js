@@ -126,8 +126,8 @@ $(document).ready(function() {
     // ####Should the firebase setting/callback be in a function to call at the end of each part of the if/else?????????
 
     // Send values to Firebase 
-      database.ref().push( {
-      // database.ref().set( {
+      // database.ref().push( {
+      database.ref().set( {
         musicSearch: music,
         ingredientSearch: food,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
@@ -136,7 +136,8 @@ $(document).ready(function() {
       // Fb values ARE being set.....
 
       // So ONLY calls back correctly when "push" enabled.... probably b/c ordering by child.....
-      database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
+      // database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
+      database.ref().on("value", function(snapshot) {
 
         var snap = snapshot.val();
           console.log(snap);
@@ -157,6 +158,7 @@ $(document).ready(function() {
           console.log(musicSearchTerm);
           // ###### but if musicSearchTerm is empty b/c browsing..... how should this a) know, b) THEN call the browsing function??????************
 
+        /*
         if (musicSearchTerm === "browse") {
 
           browseFeatured();
@@ -168,10 +170,26 @@ $(document).ready(function() {
             console.log("searchPlaylists called");
 
         };
+        */
     });
     // ^^Closes database.ref function
 
-    // ####TRY PUTTING FIREBASE STUFF IN IT'S OWN FUNCTION, THEN CALL IN EACH PART OF EARLIER IF/ELSE. ***think it was an issue with my order by child in the database reference... (with SET there's no child, only with PUSH)
+    searchRecipeByIngredients();
+      console.log("searchRecipeByIngredients called");
+
+    if (musicSearchTerm === "browse") {
+
+          browseFeatured();
+            console.log("browseFeatured called");
+
+        } else {
+
+          searchPlaylists();
+            console.log("searchPlaylists called");
+
+        };
+
+   
   });
   // ^^Closes search-submit on-click
 
