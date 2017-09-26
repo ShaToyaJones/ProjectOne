@@ -58,8 +58,9 @@ $(document).ready(function() {
 
     event.preventDefault();
 
-    console.log("Submit was clicked!");
+      console.log("Submit was clicked!");
 
+    $("#playlist-covers").empty();
 
     // ######IF/ELSE STATEMENT HERE?
     
@@ -169,7 +170,7 @@ $(document).ready(function() {
     });
   // ^^Closes database.ref function
 
-  // ####TRY PUTTING FIREBASE STUFF IN IT'S OWN FUNCTION, THEN CALL IN EACH PART OF EARLIER IF/ELSE
+  // ####TRY PUTTING FIREBASE STUFF IN IT'S OWN FUNCTION, THEN CALL IN EACH PART OF EARLIER IF/ELSE. ***think it was an issue with my order by child in the database reference... (with SET there's no child, only with PUSH)
 
   });
   // ^^Closes search-submit on-click
