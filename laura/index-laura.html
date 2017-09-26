@@ -45,41 +45,50 @@
 	<div class="row">
 		<div class="col s12 center-align">
 			<h3>Testing form inputs. Huzzah!</h3>
-			<form class="row" id="search-form">
-				<div class="input-field col s6 right-align">
 
-					<!-- enterIngredients -->
-					<i class="material-icons prefix">local_dining</i>
-					<input placeholder="ex. milk, bread, eggs" id="enterIngredients" type="text" class="validate" name="enterIngredients">
-					<label for="ingredient-search">What's in your kitchen?</label>
+			<!-- <form class="row" id="search-form"> -->
+			<form id="search-form">
 
-					<!-- Input field -->
-					<i class="material-icons prefix">music_note</i>
-					<input placeholder="ex. funk, doom metal, whale songs" id="music-search" type="text" class="validate" name="music-search">
-					<label for="music-search">Whaddya wanna hear?</label>
-
-					<!-- Search submit button -->
-					<button class="btn waves-effect waves-light" type="submit" name="action" id="search-submit">Submit
-    			<i class="large material-icons right">search</i>
-    			</button>
-				</div>
-
-				<!-- Featured playlist switch -->
-				<div>
-					<h5>Rather browse playlists?</h5>
-					<div class="switch col s6 center-align">
-						<label>
-						No
-						<input type="checkbox" id="featured-search">
-						<span class="lever"></span>
-						Yes
-						</label>
+				<div class="row">
+					<div class="input-field col s6 right-align">
+						<!-- enterIngredients -->
+						<i class="material-icons prefix">local_dining</i>
+						<input placeholder="ex. milk, bread, eggs" id="enterIngredients" type="text" class="validate" name="enterIngredients">
+						<label for="ingredient-search">What's in your kitchen?</label>
 					</div>
 				</div>
 
+				<div class="row">
+					<div class="input-field col s6 right-align">
+						<!-- Input music field -->
+						<i class="material-icons prefix">music_note</i>
+						<input placeholder="ex. funk, doom metal, whale songs" id="music-search" type="text" class="validate" name="music-search">
+						<label for="music-search">Whaddya wanna hear?</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col s3">
+						<!-- Search submit button -->
+						<button class="btn waves-effect waves-light" type="submit" name="action" id="search-submit">Search Both
+    				<i class="small material-icons right">search</i>
+    				</button>
+    			</div>
+    			<div class="col s3">
+
+						<!-- Featured search button -->
+						<!-- Kinda like Google "lucky" button -->
+						<button class="btn waves-effect waves-light" type="submit" name="action" id="browse-submit">Lucky Search
+    				<i class="small material-icons right">new_releases</i>
+    				</button>
+
+    			</div>
+				</div>
+
 			</form>
-		</div>	
+		</div>
 	</div>
+	<!-- ^^Closes s12 row with entire form in it -->
 	
 	<hr>
 
@@ -124,8 +133,12 @@
 	<!-- Main JS app.js -->
 	<script type="text/javascript" src="javascript/app.js"></script>
 
-	<!-- Spotify API JS -->
+	<!-- Spotify API js -->
 	<script type="text/javascript" src="javascript/spotify.js"></script>
+
+	<!-- Spoonacular API js -->
+	<!-- TESTING FILE -->
+	<script type="text/javascript" src="javascript/spoonacular-testing.js"></script>
 
 </body>
 </html>
