@@ -1,20 +1,13 @@
 // Script specific to Spotify API calls
 
 
-// ISSUES TO SOLVE ====================
-// 
-// [] Tokens need to be called from this script, not getting token from Postman
-// ^^^Will have to wait for future versions. Too much else to get working in meantime
-
-
-
-
 // VARIABLES ====================
 // 
 
 var listUri = "";
 
-var authToken = "Bearer BQAtbu7FUFu5_5TimvBK00tPlIRGETbM_Bjctxbelxmi_rwuYZKs_RpuNbgdTEZS67FurVfYhF_re9SiYhsu-A";
+// Move this to separate script, so only need to update/push one small file each time
+// var authToken = "Bearer BQAtbu7FUFu5_5TimvBK00tPlIRGETbM_Bjctxbelxmi_rwuYZKs_RpuNbgdTEZS67FurVfYhF_re9SiYhsu-A";
 // ^^Update this as needed until working on own
 
 
