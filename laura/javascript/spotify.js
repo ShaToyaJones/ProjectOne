@@ -16,7 +16,7 @@
 
 var listUri = "";
 
-var authToken = "Bearer BQAsHC22wiNLKdYQnPvkrpTrMW5kUh5E2j2NnjAyWzoRd_TJatzGJBp-tIL3gqac2AnkANPP6NjGvfQ3kpTlJA";
+var authToken = "Bearer BQArmbX4hIqnqnk_Y6tEtjnw8t1i0b1ZZcVcSABFv1220SGrdD4fMZ0hdPuTuSx6UdqVE2t4-au47feVwbENhw";
 // ^^Update this as needed until working on own
 
 

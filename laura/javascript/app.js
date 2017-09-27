@@ -50,6 +50,13 @@ var ingredientSearchTerm = "";
 
 $(document).ready(function() {
 
+  //JavaScript and jQuery for Materialize to function
+  Materialize.updateTextFields();
+  $(".button-collapse").sideNav();
+  $("select").material_select();    
+  $("#textarea1").val("");
+  $("#textarea1").trigger("autoresize");
+
   $("#playlist-covers").empty();
 
 	// TESTING : Search input and submit to test Firebase syncing and playlist searching
