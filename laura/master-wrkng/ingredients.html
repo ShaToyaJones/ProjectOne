@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS from Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+    <title>Ingredients | Meal Grooves</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ingredients.html">Ingredients</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ingredients.html">Ingredients</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Materalize form -->
+    <form id="search-form">
+    <div class="row">
+      <div class="input-field col s10">
+        <!-- <h3>Enter Ingredients</h3> -->
+        <label for="enterIngredients"><h2>Enter your ingredients below:</h2></label><br>
+        <input placeholder="bread, butter, garlic" id="enterIngredients" type="text" class="validate">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6 right-align">
+        <!-- Input music field -->
+        <i class="material-icons prefix">music_note</i>
+        <input placeholder="ex. funk, doom metal, whale songs" id="music-search" type="text" class="validate" name="music-search">
+        <label for="music-search">Optional: What music are you in the mood for? (leave blank for top playlists)</label>
+      </div>
+    </div>
+
+    <!-- Button used to see recipes. -->
+    <a class="waves-effect waves-light btn" href="recipes.html" id="search-submit"><i class="material-icons left">local_dining</i>See Meals &amp; Grooves</a>
+  </form>
+
+  <!-- ========== BUILD NEW DIVS BELOW ========== -->
+
+  <!-- Need these divs: -->
+  
+  <!-- #userDir -->
+  <!-- #imageFood -->
+  <!-- #playlist-covers -->
+  <!-- #player -->
+  <div class="container" id="results">
+    <div class="row">
+      <div class="col s12" id="userDir">
+      
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12" id="imageFood">
+      
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12" id="playlist-covers">
+      
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12" id="player">
+      
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- ========== SCRIPT TAGS ========== -->
+  <!-- Link to Firebase js -->  
+  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  
+  <!-- JavaScript -->
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+  <!-- Spotify API js -->
+  <script type="text/javascript" src="assets/javascript/spotify.js"></script>
+
+  <!-- Spoonacular API js -->
+  <!-- TESTING FILE -->
+  <script type="text/javascript" src="assets/javascript/spoonacular-testing.js"></script>
+
+  </body>
+</html>
