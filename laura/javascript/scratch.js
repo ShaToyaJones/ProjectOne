@@ -2,8 +2,19 @@
 // 
 
 /*
-<!-- Testing web player -->
-			<!-- <iframe src="https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZF1DXdsy92d7BLpC&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe> -->
+GIT ====================
+
+git add index-laura.html
+git add javascript/scratch.js
+git add javascript/app.js
+git add javascript/spotify.js
+
+
+git add master-wrkng/assets/javascript/spoonacular.js
+git add master-wrkng/assets/javascript/spotify.js
+git add master-wrkng/assets/javascript/spotify_token.js
+git add master-wrkng/assets/javascript/app.js
+git add master-wrkng/ingredients.html
 */
 
 /*
@@ -31,20 +42,4 @@ Cool playlists (in case need some titles already known)
  Romantic Ballads
  Love Pop
  Late Night Synths & Strings
-*/
-
-
-
-/*
-GIT ====================
-
-git add index-laura.html
-git add javascript/app.js
-git add javascript/spotify.js
-
-git add master-wrkng/assets/javascript/spoonacular.js
-git add master-wrkng/assets/javascript/spotify.js
-git add master-wrkng/assets/javascript/spotify_token.js
-git add master-wrkng/assets/javascript/app.js
-git add master-wrkng/ingredients.html
 */
