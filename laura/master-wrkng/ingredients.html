@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compiled and minified CSS from Materialize -->
@@ -11,30 +11,31 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     
     <title>Ingredients | Meal Grooves</title>
-  </head>
-  <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Logo</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ingredients.html">Ingredients</a></li>
-          <li><a href="recipes.html">Recipes</a></li>
-          <li><a href="contactus.html">Contact Us</a></li>
-          <li><a href="aboutus.html">About Us</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ingredients.html">Ingredients</a></li>
-          <li><a href="recipes.html">Recipes</a></li>
-          <li><a href="contactus.html">Contact Us</a></li>
-          <li><a href="aboutus.html">About Us</a></li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Materalize form -->
-    <form id="search-form">
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ingredients.html">Ingredients</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ingredients.html">Ingredients</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Materalize form -->
+  <form id="search-form">
     <div class="row">
       <div class="input-field col s10">
         <!-- <h3>Enter Ingredients</h3> -->
@@ -48,22 +49,16 @@
         <!-- Input music field -->
         <i class="material-icons prefix">music_note</i>
         <input placeholder="ex. funk, doom metal, whale songs" id="music-search" type="text" class="validate" name="music-search">
-        <label for="music-search">Optional: What music are you in the mood for? (leave blank for top playlists)</label>
+        <label for="music-search">Optional: What music are you in the mood for? (Leave blank for top playlists)</label>
       </div>
     </div>
 
+    <!-- ***Needs row and col div*** -->
     <!-- Button used to see recipes. -->
-    <a class="waves-effect waves-light btn" href="recipes.html" id="search-submit"><i class="material-icons left">local_dining</i>See Meals &amp; Grooves</a>
+      <button class="waves-effect waves-light btn" id="search-submit"><i class="material-icons left">local_dining</i>See Meals &amp; Grooves</button>
   </form>
 
   <!-- ========== BUILD NEW DIVS BELOW ========== -->
-
-  <!-- Need these divs: -->
-  
-  <!-- #userDir -->
-  <!-- #imageFood -->
-  <!-- #playlist-covers -->
-  <!-- #player -->
   <div class="container" id="results">
     <div class="row">
       <div class="col s12" id="userDir">
@@ -89,10 +84,6 @@
 
 
 
-
-
-
-
   <!-- ========== SCRIPT TAGS ========== -->
   <!-- Link to Firebase js -->  
   <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
@@ -112,5 +103,5 @@
   <!-- Spotify API js -->
   <script type="text/javascript" src="assets/javascript/spotify.js"></script>
 
-  </body>
+</body>
 </html>
