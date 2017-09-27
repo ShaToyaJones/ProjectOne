@@ -3,10 +3,8 @@
 
 // ISSUES TO SOLVE ====================
 // 
-// [x] Need to link in Toya's main HTML
-// [] Tokens expire!!!
-// [x] "Request header not allowed by Access-Control-Allow-Headers in preflight response" ~FIXED if comment-out cache-control & postman-token
 // [] Tokens need to be called from this script, not getting token from Postman
+// ^^^Will have to wait for future versions. Too much else to get working in meantime
 
 
 
@@ -16,7 +14,7 @@
 
 var listUri = "";
 
-var authToken = "Bearer BQCk5DCDSF2FdCUb5Go_zWWr7-oZat0sctn5RUm66YFA_pK_BiQJyoEerQeg_I8dBSEms29YH6tsG8q4fD4fug";
+var authToken = "Bearer BQAtbu7FUFu5_5TimvBK00tPlIRGETbM_Bjctxbelxmi_rwuYZKs_RpuNbgdTEZS67FurVfYhF_re9SiYhsu-A";
 // ^^Update this as needed until working on own
 
 
@@ -43,13 +41,12 @@ function searchPlaylists() {
   }
   $.ajax(spotSearch).done(function (response) {
   
-    console.log(response);
+    // console.log(response);
 
     var musicSearchResults = response.playlists.items;
 
-    console.log(musicSearchResults);
-
-    console.log("-----^^^SearchedPlaylists-----------------");
+    // console.log(musicSearchResults);
+    // console.log("-----^^^SearchedPlaylists-----------------");
 
     for (var s = 0; s < musicSearchResults.length; s++) {
 
@@ -73,10 +70,11 @@ function searchPlaylists() {
 };
 
 
-    // BROWSE FEATURED PLAYLISTS ====================
-    //
+  // BROWSE FEATURED PLAYLISTS ====================
+  //
 
 function browseFeatured() {
+
   // Spotify API call to get list of FEATURED playlists
   var featPlaylists = {
     "async": true,
@@ -90,17 +88,16 @@ function browseFeatured() {
   $.ajax(featPlaylists).done(function (response) {
     
     // Log results of the featured playlists ajax call
-    console.log(response);
+    // console.log(response);
     // console.log(response.message);
     // console.log(response.playlists);
 
-    // MAKE SURE HEATHER'S RESULTS AREN'T CALLED "RESULTS"
     // Save call results to new variable
     var results = response.playlists.items;
 
-      console.log(results);
+      // console.log(results);
       // console.log(results.items);
-      console.log("-----^^^Featured Playlists-----------------");
+      // console.log("-----^^^Featured Playlists-----------------");
 
       for (var k = 0; k < results.length; k++) {
 
@@ -111,25 +108,18 @@ function browseFeatured() {
           
         // Grabs image from ajax object and renders on page  ~WORKS
         var listImg = $("<img>");
+        
         listImg.attr( {
           "src": results[k].images[0].url,
           "data-uri": results[k].uri,
           "height": 200,
           "width": 200
         });
-        // listImg.attr("src", results[k].images[0].url);
-        // listImg.attr("data-uri", results[k].uri);
 
         listImg.addClass("listGif");
 
         // listDiv.append(listId);
         listDiv.append(listImg);
-
-        // Adding Carousel viewer*********************
-        // var carouselItem = $("<a>");
-        // carouselItem.addClass("carousel-item");
-
-        // listDiv.append(carouselItem);
 
         $("#playlist-covers").append(listDiv);
       };    
@@ -138,19 +128,19 @@ function browseFeatured() {
 };
 
 
+  // WEB PLAYER ====================
+  //
 
-// =============================
-
+// Renders music player with selected playlist based on playlist cover clicked on
 function renderPlayer() {
 
-  // Renders music player with selected playlist based on playlist cover clicked on
-
+  // Clears previously rendered web player
   $("#player").empty();
 
   // listUri in scope?  ~FIXED, declared as empty in global
   var playerSrc = "https://open.spotify.com/embed?uri=" + listUri + "&theme=white";
     
-    console.log(playerSrc);
+    // console.log(playerSrc);
 
   var player = $("<iframe>");
 
@@ -172,31 +162,7 @@ function renderPlayer() {
 // MAIN PROCESS ====================
 // 
 
-// Transfer this to app.js when ready?
-// Render something from API object length  ~WORKS
-
 $(document).ready(function() {
-
-  // Initializes Materialize carousel viewer
-  // $(".carousel").carousel();
-
-
-    // SEARCH PLAYLISTS PROCESS ====================
-    //
-
-    // Have it built as function further up
-    // Then call function as part of app.js
-
-
-
-
-    // FEATURED PLAYLISTS PROCESS ====================
-    //
-  
-
-    // END OF PLAYLISTS PROCESSES ====================
-    //
-
 
   // Applies click functions to rendered playlist covers
   $(this).on("click", ".listGif", function() {
@@ -205,18 +171,11 @@ $(document).ready(function() {
 
     // Stores value of URI from playlist cover image clicked
     listUri = $(this).attr("data-uri");
+      // console.log("URI: " + listUri);
 
-      console.log("URI: " + listUri);
-
-    // [x] When playlist image is clicked, needs to send URI to web player source link.....
-    // Store this as function similar to renderButtons in giphy HW?
-    // So call function here to run on-click  ~YEP YEP!
-
-    // Did a test: Calling renderPlayer() in app.js DID still log the URI....
+    // Calls function to render webplayer from selected playlist cover
     renderPlayer();
   });
-
-
 
 });
 // ^^Closes document-ready
