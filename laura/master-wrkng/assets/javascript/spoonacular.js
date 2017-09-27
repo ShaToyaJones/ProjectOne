@@ -7,12 +7,12 @@
     // sets newRecipe to the value of ingredientSearchTerm, which is returned from Firebase in app.js
     var newRecipe = ingredientSearchTerm;
     
-      console.log("Ingredient search term is: " + ingredientSearchTerm);
+      // console.log("Ingredient search term is: " + ingredientSearchTerm);
 
     // Constructing a queryURL using the user input stored in the newRecipe variable
     var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + newRecipe + "&limitLicense=false&number=4&ranking=1";
 
-      console.log(queryURL);
+      // console.log(queryURL);
         
     // Performing an AJAX request with the queryURL
     $.ajax({
@@ -28,7 +28,7 @@
       
       $("#imageFood").html("");
             
-        console.log(response);
+        // console.log(response);
         
       // Looping through each API recipe result 
       for (var i = 0; i < response.length; i++) {
@@ -48,7 +48,7 @@
         recipeImage.attr("src", response[i].image);
         recipeImage.attr("data-id", response[i].id);
 
-          console.log("This is the image: " + recipeImage);
+          // console.log("This is the image: " + recipeImage);
 
         var recTitle = $("<span class='card-title'>").text(response[i].title);
                 
@@ -76,14 +76,14 @@ $(document).ready(function() {
     look into the id tag*/
     event.preventDefault();
 
-      console.log("The Image was clicked");
+      // console.log("The Image was clicked");
 
     //need to grab the image id of the specific image clicked
     var imgId = $(this).attr("data-id");
-      console.log(imgId);
+      // console.log(imgId);
    
     var query2URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" + imgId + "/information?includeNutrition=false"
-      console.log(query2URL);
+      // console.log(query2URL);
 
     $.ajax({
       headers: {
@@ -97,7 +97,7 @@ $(document).ready(function() {
       $("#imageFood").html("");
       $("#userDir").text("");
     
-      console.log(data);
+      // console.log(data);
 
       /*display the step 
       by step instructions, ingredient list, 
