@@ -114,6 +114,10 @@ $(document).ready(function() {
         ingredientSearchTerm = snap.ingredientSearch;
           // console.log(ingredientSearchTerm);
 
+        // Want to add ingredientSearchTerm to the page.... where should that go????
+        // Might also need to clear the div when form resubmitted  ~NOPE! B/c does it when FB value changes *brushes shoulders off*
+        $("#searched").html("Showing meals for: " + ingredientSearchTerm);
+
         musicSearchTerm = snap.musicSearch;
           // console.log(musicSearchTerm);
 
