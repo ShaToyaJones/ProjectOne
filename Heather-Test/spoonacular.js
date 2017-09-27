@@ -11,16 +11,11 @@ $(document).ready(function() {
 function searchRecipeByIngredients() {
 // $("#userDir").text("Click on an image to get the recipe");
 
-    // // sets newRecipe to the value of ingredientSearchTerm, which is returned from Firebase in app.js
-    // var newRecipe = ingredientSearchTerm;
-    
-    // // ####SEE IF THIS LOGS FIRST!!!!!!!!!!!!!  ~WORKS
-    // console.log("Ingredient search term is: " + ingredientSearchTerm);
     //this line grabs the input from the textbox
     var newRecipe = $('#foodInput').val().trim().toLowerCase();
 
     // Constructing a queryURL using the user input stored in the newRecipe variable
-    var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + newRecipe + "&limitLicense=false&number=4&ranking=1";
+    var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + newRecipe + "&limitLicense=false&number=1&ranking=1";
 
     console.log(queryURL);
         
@@ -55,7 +50,6 @@ function searchRecipeByIngredients() {
             recipeImage.attr("src", response[i].image);
             recipeImage.attr('data-id',response[i].id);
 
-            console.log("This is the image: " + recipeImage);
 
             var recTitle = $("<span class='card-title'>").text(response[i].title);
                 
@@ -69,7 +63,7 @@ function searchRecipeByIngredients() {
         });
         // ^^^Closes ajax1 done function
 };
-    /*onclick function which calls the Get recipe information 
+    /*create an onclick function which calls the Get recipe information 
     create a link that will show step by step instructions, ingredient list, 
     the recipe title, image, and time to make*/
     $("body").on("click", ".food", function(event) {
@@ -94,7 +88,7 @@ function searchRecipeByIngredients() {
             method: "GET"
     }).done(function(data) {
             $("#imageFood").html('');
-            $("#userDir").text("");
+            // $("#userDir").text("");
     
             console.log(data);
     /*display the step 
@@ -104,7 +98,7 @@ function searchRecipeByIngredients() {
 
     
         var recipeDetailDiv = $("<div class='card-content'>");
-        var recipeClicked = $("<img width=800px height=auto>");
+        var recipeClicked = $("<img width=300px height=auto>");
         var recipeImage = $("<img width=300px height=auto>");
         //this adds the class food to all images
         recipeImage.addClass("food");
@@ -116,9 +110,9 @@ function searchRecipeByIngredients() {
             ingredientList += data.extendedIngredients[i].originalString + '<br>';
         }
         var ingredList = $("<p>").html("Ingredients: " + ingredientList);
-        var timeToMake = $("<p>").text("Total Time: " + data.readyInMinutes);
-        var servings = $("<p>").text("Serving Size: " + data.servings);
-        var directions = $("<p>").text( data.instructions);
+        var timeToMake = $("<p><br>").text("Total Time: " + data.readyInMinutes);
+        var servings = $("<p><br>").text("Serving Size: " + data.servings);
+        var directions = $("<p><br>").text(data.instructions);
         //setting the src attribute to multiple properties pulled off the data from JSON
         // recipeClicked.addClass("img", recipe);
         recipeClicked.attr("src", data.image);
@@ -137,7 +131,7 @@ function searchRecipeByIngredients() {
 
    
     })
-     });
+  });
 
 });
 
