@@ -35,49 +35,57 @@
   </nav>
 
   <!-- Materalize form -->
-  <form id="search-form">
-    <div class="row">
-      <div class="input-field col s10">
-        <!-- <h3>Enter Ingredients</h3> -->
-        <label for="enterIngredients"><h2>Enter your ingredients below:</h2></label><br>
-        <input placeholder="bread, butter, garlic" id="enterIngredients" type="text" class="validate">
-      </div>
+  <div class="row">
+    <div class="col s12">
+      <form id="search-form">
+        <div class="row">
+          <div class="input-field col s6 left-align">
+            <!-- <h3>Enter Ingredients</h3> -->
+            <i class="material-icons prefix">local_dining</i>
+            <input placeholder="Search some meals" id="enterIngredients" type="text" name="enterIngredients" class="validate">
+            <label for="enterIngredients">Enter your ingredients below:</label>
+          </div>
+
+          <div class="input-field col s6 right-align">
+            <!-- Input music field -->
+            <i class="material-icons prefix">music_note</i>
+            <input placeholder="Search some grooves" id="music-search" type="text" class="validate" name="music-search">
+            <label for="music-search">Optional: Leave blank for top playlists!</label>
+          </div>
+        </div>
+        <!-- ^^Closes input row -->
+
+        <div class="row">
+          <div class="col s12 center-align">
+            <!-- Button used to see recipes. -->
+            <button class="waves-effect waves-light btn" id="search-submit"><i class="material-icons left">local_dining</i>See Results</button>
+          </div>
+        </div> 
+      </form>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="input-field col s6 right-align">
-        <!-- Input music field -->
-        <i class="material-icons prefix">music_note</i>
-        <input placeholder="ex. funk, doom metal, whale songs" id="music-search" type="text" class="validate" name="music-search">
-        <label for="music-search">Optional: What music are you in the mood for? (Leave blank for top playlists)</label>
-      </div>
-    </div>
 
-    <!-- ***Needs row and col div*** -->
-    <!-- Button used to see recipes. -->
-      <button class="waves-effect waves-light btn" id="search-submit"><i class="material-icons left">local_dining</i>See Meals &amp; Grooves</button>
-  </form>
-
-  <!-- ========== BUILD NEW DIVS BELOW ========== -->
+  <!-- ========== Empty results divs ========== -->
   <div class="container" id="results">
     <div class="row">
       <div class="col s12" id="userDir">
-      
+        <!-- User instructions / search input terms renders here -->
       </div>
     </div>
     <div class="row">
       <div class="col s12" id="imageFood">
-      
+        <!-- Recipe image cards render here -->
       </div>
     </div>
     <div class="row">
       <div class="col s12" id="playlist-covers">
-      
+        <!-- Spotify playlist covers render here -->
       </div>
     </div>
     <div class="row">
       <div class="col s12" id="player">
-      
+        <!-- Spotify web player renders here -->
       </div>
     </div>
   </div>
