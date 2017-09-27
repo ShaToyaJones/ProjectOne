@@ -43,7 +43,7 @@ function searchRecipeByIngredients() {
               // ^^^Wondering if this work better as just "<div>", then a separate .addClass for "card-content light-blue" #lcb
 
           // Creating and storing an image tag
-          var recipeImage = $("<img width=300px height=auto>");
+          var recipeImage = $("<img width=250px height=auto>");
             //this adds the class food to all images
             recipeImage.addClass("food");
             // Setting the src attribute of the image to a property pulled off the result item
@@ -99,7 +99,7 @@ function searchRecipeByIngredients() {
     
         var recipeDetailDiv = $("<div class='card-content'>");
         var recipeClicked = $("<img width=300px height=auto>");
-        var recipeImage = $("<img width=300px height=auto>");
+        var recipeImage = $("<img width=250px height=auto>");
         //this adds the class food to all images
         recipeImage.addClass("food");
         // Setting the src attribute of the image to a property pulled off the result item
@@ -109,10 +109,10 @@ function searchRecipeByIngredients() {
         for(i in data.extendedIngredients){
             ingredientList += data.extendedIngredients[i].originalString + '<br>';
         }
-        var ingredList = $("<p>").html("Ingredients: " + ingredientList);
-        var timeToMake = $("<p><br>").text("Total Time: " + data.readyInMinutes);
-        var servings = $("<p><br>").text("Serving Size: " + data.servings);
-        var directions = $("<p><br>").text(data.instructions);
+        var ingredList = $("<p>" + "<br>").html("Ingredients: " + ingredientList);
+        var timeToMake = $("<p>").text("Total Time: " + data.readyInMinutes);
+        var servings = $("<p>").text("Serving Size: " + data.servings);
+        var directions = $("<p>").text(data.instructions);
         //setting the src attribute to multiple properties pulled off the data from JSON
         // recipeClicked.addClass("img", recipe);
         recipeClicked.attr("src", data.image);
@@ -132,9 +132,3 @@ function searchRecipeByIngredients() {
    
     })
   });
-
-});
-
-
-
-
