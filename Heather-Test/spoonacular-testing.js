@@ -69,7 +69,7 @@ function searchRecipeByIngredients() {
         });
         // ^^^Closes ajax1 done function
 };
-    /*create an onclick function which calls the Get recipe information 
+    /*onclick function which calls the Get recipe information 
     create a link that will show step by step instructions, ingredient list, 
     the recipe title, image, and time to make*/
     $("body").on("click", ".food", function(event) {
