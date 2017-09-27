@@ -41,4 +41,10 @@ GIT ====================
 git add index-laura.html
 git add javascript/app.js
 git add javascript/spotify.js
+
+git add master-wrkng/assets/javascript/spoonacular.js
+git add master-wrkng/assets/javascript/spotify.js
+git add master-wrkng/assets/javascript/spotify_token.js
+git add master-wrkng/assets/javascript/app.js
+git add master-wrkng/ingredients.html
 */
