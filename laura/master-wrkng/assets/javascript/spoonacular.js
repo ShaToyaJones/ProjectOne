@@ -39,7 +39,7 @@
               // ^^^Wondering if this work better as just "<div>", then a separate .addClass for "card-content light-blue" #lcb
 
         // Creating and storing an image tag
-        var recipeImage = $("<img width=300px height=auto>");
+        var recipeImage = $("<img width=250px height=auto>");
 
         //this adds the class food to all images
         recipeImage.addClass("food");
@@ -94,7 +94,7 @@ $(document).ready(function() {
       method: "GET"
     }).done(function(data) {
 
-      $("#imageFood").html("");
+      // $("#imageFood").html("");
       $("#userDir").text("");
     
       // console.log(data);
@@ -105,8 +105,8 @@ $(document).ready(function() {
       *and possibly push them to firebase */
 
       var recipeDetailDiv = $("<div class='card-content'>");
-      var recipeClicked = $("<img width=800px height=auto>");
-      var recipeImage = $("<img width=300px height=auto>");
+      var recipeClicked = $("<img width=300px height=auto>");
+      var recipeImage = $("<img width=250px height=auto>");
       
       //this adds the class food to all images
       recipeImage.addClass("food");
@@ -141,7 +141,7 @@ $(document).ready(function() {
 
       var recipeDetailCard = $("<div class='card'>").append(recipeDetailDiv);
         
-      $("#imageFood").append(recipeDetailCard);
+      $("#recipe-detail").append(recipeDetailCard);
     });
     // ^^Ajax2 done
   });
