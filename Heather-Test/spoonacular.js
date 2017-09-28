@@ -16,7 +16,7 @@ $(document).ready(function() {
         var newRecipe = $('#foodInput').val().trim().toLowerCase();
 
         // Constructing a queryURL using the user input stored in the newRecipe variable
-        var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + newRecipe + "&limitLicense=false&number=1&ranking=1";
+        var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + newRecipe + "&limitLicense=false&number=4&ranking=1";
 
         console.log(queryURL);
 
@@ -55,7 +55,7 @@ $(document).ready(function() {
                 // put the recipe image in the recipe div
                 recipeDiv.append(recipeImage);
                 recipeDiv.append(recTitle);
-                var recipeCard = $("<div class='small card'>").append(recipeDiv)
+                var recipeCard = $("<div class='small card s6'>").append(recipeDiv)
                     // display the recipe image to the html
                 $("#imageFood").append(recipeCard);
                 $("#ingredientForm input").val('');
@@ -89,7 +89,7 @@ $(document).ready(function() {
             $("#expandedCard").html('');
             // $("#userDir").text("");
 
-            console.log(data);
+            console.log("This is the data here:",data);
             /*display the step 
             by step instructions, ingredient list, 
             the recipe title, image, and time to make

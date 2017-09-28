@@ -10,24 +10,19 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
    </head>
    <style type="text/css">
-      .food {
-      /*margin: 5px 5px 5px 70px;*/
-      align-self: center;
-      float: left;
-      display: inline-block;
-      overflow: visible;
-      }
-      .card-content{
-      float: left;
-      display: inline-block;
-      }
+     
       .card{
       float: left;
       display: inline-block;
+      border-style: none;
+      padding: 0px;
+
       }
-      .card-title{
-         display: inline-block;
+      .card-content{
+         padding: 0px;
       }
+     
+     
    </style>
    <body>
       <div class="container-fluid">
@@ -46,29 +41,35 @@
             </div>
          </form>
       </div>
+   </div>
+</div>
       <br>
        <div class="container-fluid">
          <div class="row">
-            <div class="col s4 l5">
+            <div class="col s12">
                <div id="expandedCard">
                </div>
             </div>
          </div>
       </div>
 
-      
+
       <!--  the recipe images will get dumped here -->
 
       <div class="row">
-        <div class="col s6 l4">
-          <div class="card">
+        <div class="col s12 l4">
+<!--          This (class of card)  possibly needs to go
+ -->          <div class="card">
             <div class="card-image" id="imageFood">
               <img>
               <span class="card-title"></span>
             </div>
+         </div>
+      </div>
+   </div>
 
    
-      <br><br><br><br><br>
+    
       <!-- javascript links -->
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <!-- Compiled and minified JavaScript -->
