@@ -1,5 +1,9 @@
 body {
   margin: 0;
+  background-image: url(file:///C:/Users/ShaTo/Documents/UCF_BootCamp/ProjectOne/assets/images/old_map_@2X.png);
+  /*display: flex;
+  min-height: 100vh;
+  flex-direction: column;*/
 }
 
 .topnav {
@@ -24,6 +28,14 @@ body {
 
 .topnav .icon {
   display: none;
+}
+
+.brand-logo img {
+  width: 200px;
+  height: 50px;
+  position: relative;
+  top: 10px;
+  /*margin-left: 40px;*/
 }
 
 @media screen and (max-width: 600px) {
