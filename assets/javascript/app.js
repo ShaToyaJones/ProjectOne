@@ -9,6 +9,19 @@ var config = {
 };
 firebase.initializeApp(config);
 
+<<<<<<< HEAD
+//JavaScript and jQuery for Materialize to function.
+$( document ).ready(function(){
+		Materialize.updateTextFields();
+	$(".button-collapse").sideNav();
+	$('select').material_select();    
+	$('#textarea1').val("");
+	// $('#textarea1').textarea1rigger('autoresize');
+	// Clears input fields on submit
+	$(".btn").on("click", function(){
+		$("#contactForm").trigger("reset");
+	});
+=======
 
 
 
@@ -187,4 +200,5 @@ $(document).ready(function() {
 
   // });
   // ^^Closes browse-submit function
+>>>>>>> 0af52254dce998ee524271acdef6c4270c49b752
 });

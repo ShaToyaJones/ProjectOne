@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Compiled and minified CSS from Materialize -->
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 	<!-- CSS -->
 	<!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
-  	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	
 	<title>Ingredients | Meal Grooves</title>
 </head>
@@ -21,19 +21,21 @@
 
  <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
+
+      <a href="index.html" class="brand-logo">
+      <img src="file:///C:/Users/ShaTo/Documents/UCF_BootCamp/ProjectOne/assets/images/mealgrooves-logo-white.svg" class="brand-logo"></img></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="index.html">Home</a></li>
         <li><a href="ingredients.html">Ingredients</a></li>
-        <li><a href="recipes.html">Recipes</a></li>
+        <!-- <li><a href="recipes.html">Recipes</a></li> -->
         <li><a href="contactus.html">Contact Us</a></li>
         <li><a href="aboutus.html">About Us</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="index.html">Home</a></li>
         <li><a href="ingredients.html">Ingredients</a></li>
-        <li><a href="recipes.html">Recipes</a></li>
+        <!-- <li><a href="recipes.html">Recipes</a></li> -->
         <li><a href="contactus.html">Contact Us</a></li>
         <li><a href="aboutus.html">About Us</a></li>
       </ul>
@@ -41,16 +43,35 @@
   </nav>
 
 	<!-- Materalize form -->
-	<div class="row">
-        <div class="input-field col s10">
-        	<!-- <h3>Enter Ingredients</h3> -->
-        	<h2><label for="enterIngredients">Enter your ingredients below:</h2></label><br>
-        	<input placeholder="bread, butter, garlic" id="enterIngredients" type="text" class="validate">        	
-        </div>
-    </div>
+  <div class="row">
+    <div class="col s12">
+      <form id="search-form">
+        <div class="row">
+          <div class="input-field col m6 left-align">
+            <!-- <h3>Enter Ingredients</h3> -->
+            <i class="material-icons prefix">local_dining</i>
+            <input placeholder="Search some meals" id="enterIngredients" type="text" name="enterIngredients" class="validate">
+            <label for="enterIngredients">Enter your ingredients below: (Separated by comma)</label>
+          </div>
 
-  <!-- Button used to see recipes. -->
-  <a class="waves-effect waves-light btn"><i class="material-icons left">local_dining</i>See Recipes</a>
+          <div class="input-field col m6 right-align">
+            <!-- Input music field -->
+            <i class="material-icons prefix">music_note</i>
+            <input placeholder="Search some grooves" id="music-search" type="text" class="validate" name="music-search">
+            <label for="music-search">Enter music type: (Or leave blank for top playlists)</label>
+          </div>
+        </div>
+        <!-- ^^Closes input row -->
+
+        <div class="row">
+          <div class="col s12 center-align">
+            <!-- Button used to see recipes. -->
+            <button class="waves-effect waves-light btn btn #b71c1c red darken-4" id="search-submit"><i class="material-icons left">local_dining</i>See Results</button>
+          </div>
+        </div> 
+      </form>
+    </div>
+  </div>
 
 
 	<!-- jQuery -->
@@ -60,7 +81,7 @@
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 	<!-- JavaScript -->
-	<script type="text/javascript" src="assets/javascript/app.js"></script>
+	<script type="text/javascript" src="assets/javascript/app.js"></script>	
 
 </body>
 </html>
