@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test index page</title>
+    
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+	<!-- Materialize Glyphs Stylesheet -->
+	<link  rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<!-- Materialize Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+	<!-- My CSS Stylesheet -->
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/zazz.css"> -->
+
+	<style type="text/css">
+	#playlist-covers {
+		display: inline-flex;
+		flex-wrap: wrap;
+	}
+
+	.listGif {
+		margin-left: 5px;
+	}
+
+	h1 {
+		font-family: 'Pacifico', cursive;
+	}
+
+	#search-submit {
+		font-size: 14px;
+	}
+
+	#logo-test {
+		background-color: #c62828;
+		height: 100px;
+		width: 400px;
+	}
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+	<header class="row">
+		<div class="col s12 center-align" id="logo-test">
+			<!-- Logo manupulating -->
+			<img src="mealgrooves-logo-white.svg">
+		</div>
+	</header>
+
+
+	<div class="row">
+		<div class="col s12 center-align">
+			<h1>Playlist party!</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12 center-align">
+			<h3>Testing form inputs. Huzzah!</h3>
+
+			<!-- <form class="row" id="search-form"> -->
+			<form id="search-form">
+
+				<div class="row">
+					<div class="input-field col s6 right-align">
+						<!-- enterIngredients -->
+						<i class="material-icons prefix">local_dining</i>
+						<input placeholder="ex. milk, bread, eggs" id="enterIngredients" type="text" class="validate" name="enterIngredients">
+						<label for="ingredient-search">What's in your kitchen?</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6 right-align">
+						<!-- Input music field -->
+						<i class="material-icons prefix">music_note</i>
+						<input placeholder="ex. funk, doom metal, whale songs" id="music-search" type="text" class="validate" name="music-search">
+						<label for="music-search">Optional: Whaddya wanna hear? (leave blank for top playlists)</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col s6 right-align">
+						<!-- Search submit button -->
+						<button class="btn waves-effect waves-light red darken-3" type="submit" name="action" id="search-submit">Search Meals &amp; Grooves
+    				<i class="small material-icons right">search</i>
+    				</button>
+    			</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+	<!-- ^^Closes s12 row with entire form in it -->
+	
+	<hr>
+
+	<!-- Layout option 1: covers & player side-by-side -->
+	<div class="row">
+		<div class="col s12 m6 center-align" id="playlist-covers">
+			<!-- Playlist covers generate here -->
+		</div>
+
+		<div class="col s12 m6 center-align" id="player">
+			<!-- Music player generates here -->
+		</div>
+	</div>
+
+	<!-- Layout option 2: cover carousel above player -->
+	<!-- <div class="row">
+		<div class="col s12 center-align">
+			<div class="carousel" id="playlist-covers">
+				
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12 center-align" id="player">
+		</div>
+	</div> -->
+
+	</div>
+	<!-- ^Closes overall container -->
+
+
+	<!-- ========== SCRIPT TAGS ========== -->
+	<!-- Link to Firebase js -->	
+	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+
+	<!-- Link to jquery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Materialize Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+	<!-- Main JS app.js -->
+	<script type="text/javascript" src="javascript/app.js"></script>
+
+	<!-- Spotify API js -->
+	<script type="text/javascript" src="javascript/spotify.js"></script>
+
+	<!-- Spoonacular API js -->
+	<!-- TESTING FILE -->
+	<script type="text/javascript" src="javascript/spoonacular-testing.js"></script>
+
+</body>
+</html>
