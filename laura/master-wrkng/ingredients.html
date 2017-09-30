@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS from Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+    <title>Ingredients | Meal Grooves</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ingredients.html">Ingredients</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ingredients.html">Ingredients</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Materalize form -->
+  <div class="row">
+    <div class="col s12">
+      <form id="search-form">
+        <div class="row">
+          <div class="input-field col s6 left-align">
+            <!-- <h3>Enter Ingredients</h3> -->
+            <i class="material-icons prefix">local_dining</i>
+            <input placeholder="Search some meals" id="enterIngredients" type="text" name="enterIngredients" class="validate">
+            <label for="enterIngredients">Enter your ingredients below: (Separated by comma)</label>
+          </div>
+
+          <div class="input-field col s6 right-align">
+            <!-- Input music field -->
+            <i class="material-icons prefix">music_note</i>
+            <input placeholder="Search some grooves" id="music-search" type="text" class="validate" name="music-search">
+            <label for="music-search">Enter music type: (Or leave blank for top playlists)</label>
+          </div>
+        </div>
+        <!-- ^^Closes input row -->
+
+        <div class="row">
+          <div class="col s12 center-align">
+            <!-- Button used to see recipes. -->
+            <button class="waves-effect waves-light btn" id="search-submit"><i class="material-icons left">local_dining</i>See Results</button>
+          </div>
+        </div> 
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ========== Empty results divs ========== -->
+  <div class="container" id="results">
+    <div class="row">
+      <div class="col s12" id="searched">
+        <!-- Searched input terms render here -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12" id="userDir">
+        <!-- User instructions render here -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12" id="recipe-detail">
+        <!-- Detailed recipe cards render here -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12" id="imageFood">
+        <!-- Recipe image cards render here -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s9 left-align" id="playlist-covers">
+        <!-- Spotify playlist covers render here -->
+      </div>
+    <!-- </div> -->
+    <!-- <div class="row"> -->
+      <div class="col s3" id="player">
+        <!-- Spotify web player renders here -->
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- ========== SCRIPT TAGS ========== -->
+  <!-- Link to Firebase js -->  
+  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  
+  <!-- JavaScript -->
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+  <!-- Spoonacular API js -->
+  <script type="text/javascript" src="assets/javascript/spoonacular.js"></script>
+
+  <!-- Spotify API token js -->
+  <script type="text/javascript" src="assets/javascript/spotify_token.js"></script>
+
+  <!-- Spotify API js -->
+  <script type="text/javascript" src="assets/javascript/spotify.js"></script>
+
+</body>
+</html>
