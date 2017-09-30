@@ -55,8 +55,8 @@ $(document).ready(function() {
                 // put the recipe image in the recipe div
                 recipeDiv.append(recipeImage);
                 recipeDiv.append(recTitle);
-                var recipeCard = $("<div class='small card s6'>").append(recipeDiv)
-                    // display the recipe image to the html
+                var recipeCard = $("<div class='small card'>").append(recipeDiv);
+                // display the recipe image to the html
                 $("#imageFood").append(recipeCard);
                 $("#ingredientForm input").val('');
             };
@@ -89,7 +89,7 @@ $(document).ready(function() {
             $("#expandedCard").html('');
             // $("#userDir").text("");
 
-            console.log("This is the data here:",data);
+            console.log(data);
             /*display the step 
             by step instructions, ingredient list, 
             the recipe title, image, and time to make
@@ -103,15 +103,15 @@ $(document).ready(function() {
             recipeImage.addClass("food");
             // Setting the src attribute of the image to a property pulled off the result item
             recipeImage.attr("src", data.image);
-            var recTitle = $("<span class='card-title'>").text(data.title);
+            var recTitle = $("<span class='card-title'>").html(data.title);
             var ingredientList = '';
             for (i in data.extendedIngredients) {
                 ingredientList += data.extendedIngredients[i].originalString + '<br>';
             }
             var ingredList = $("<p>" + "<br>").html("Ingredients: " + ingredientList);
-            var timeToMake = $("<p>").text("Total Time: " + data.readyInMinutes);
-            var servings = $("<p>").text("Serving Size: " + data.servings);
-            var directions = $("<p>").text(data.instructions);
+            var timeToMake = $("<p>" + "<br>").text("Total Time: " + data.readyInMinutes);
+            var servings = $("<p>" + "<br>").text("Serving Size: " + data.servings);
+            var directions = $("<p>" + "<br>").text(data.instructions);
             //setting the src attribute to multiple properties pulled off the data from JSON
             // recipeClicked.addClass("img", recipe);
             recipeClicked.attr("src", data.image);
@@ -124,7 +124,7 @@ $(document).ready(function() {
             recipeDetailDiv.append(timeToMake);
             recipeDetailDiv.append(servings);
             recipeDetailDiv.append(directions);
-            var recipeDetailCard = $("<div class='card'>").append(recipeDetailDiv);
+            var recipeDetailCard = $("<div class='card s6'>").append(recipeDetailDiv);
 
             $("#expandedCard").append(recipeDetailCard);
         })
