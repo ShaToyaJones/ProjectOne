@@ -9,7 +9,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 //JavaScript and jQuery for Materialize to function.
 $( document ).ready(function(){
 		Materialize.updateTextFields();
@@ -21,7 +21,7 @@ $( document ).ready(function(){
 	$(".btn").on("click", function(){
 		$("#contactForm").trigger("reset");
 	});
-=======
+// =======
 
 
 
@@ -200,5 +200,5 @@ $(document).ready(function() {
 
   // });
   // ^^Closes browse-submit function
->>>>>>> 0af52254dce998ee524271acdef6c4270c49b752
+// >>>>>>> 0af52254dce998ee524271acdef6c4270c49b752
 });
