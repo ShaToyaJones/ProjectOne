@@ -38,6 +38,21 @@ body {
   /*margin-left: 40px;*/
 }
 
+.form-group {
+  padding: 15px;
+}
+
+#stj {
+  padding: 100px;
+}
+
+#tech {
+  padding: 100px;
+  text-align: center;
+  position: relative;
+  bottom: 175px;
+}
+
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
@@ -59,8 +74,4 @@ body {
     text-align: left;
   }
 
-}
-
-.form-group {
-  padding: 15px;
 }

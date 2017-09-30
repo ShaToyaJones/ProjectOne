@@ -10,4 +10,8 @@ $( document ).ready(function(){
 	$(".btn").on("click", function(){
 		$("#contactForm").trigger("reset");
 	});
+	$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
 });
