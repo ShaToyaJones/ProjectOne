@@ -1,12 +1,12 @@
-#Team Name: AJAX Bettys
-#ProjectOne
+# Team Name: AJAX Bettys
+# ProjectOne
 
-#Short 1 Page Proposal
-*Project title:
+# Short 1 Page Proposal
+# Project title:
 *Music & Food Pairing 
 *App Name:
 *
-*Team member names
+# Team member names
 *Heather Mathies - Developer
 *Laura Boetcher - Developer
 *ShaToya Jones - Team Lead
