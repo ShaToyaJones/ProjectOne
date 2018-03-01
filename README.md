@@ -1,10 +1,8 @@
 # ProjectOne
 # Team Name: AJAX Bettys
 
-# Project title:
-Music & Food Pairing 
-# App Name:
-* Meal Grooves
+# Project title: Music & Food Pairing 
+# App Name: Meal Grooves
 
 # Team member names & Roles:
 * ShaToya Jones - Team Lead
