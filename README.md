@@ -1,5 +1,5 @@
-# Team Name: AJAX Bettys
 # ProjectOne
+# Team Name: AJAX Bettys
 
 # Project title:
 Music & Food Pairing 
@@ -7,9 +7,9 @@ Music & Food Pairing
 * Meal Grooves
 
 # Team member names & Roles:
+* ShaToya Jones - Team Lead
 * Heather Mathies - Developer
 * Laura Boetcher - Developer
-* ShaToya Jones - Team Lead
 
 # Project description:
 This app will allow users input their current groceries, suggest what recipes to prepare, and play music based on the chosen recipe.
